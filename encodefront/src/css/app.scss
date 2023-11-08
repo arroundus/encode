@@ -1,0 +1,121 @@
+// app global css in SCSS form
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.q-layout {
+  margin-top: 38px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.groupbtn {
+  margin-left: auto;
+  -webkit-app-region: no-drag;
+}
+
+.device-connect-title {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#connect {
+  display: inline;
+}
+
+#disconnect {
+  display: none;
+}
+
+#connect,
+#disconnect {
+  height: 25px;
+  width: 150px;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: none;
+  margin-bottom: 10px;
+  transition: 0.2s linear;
+}
+
+#connect:hover,
+#disconnect:hover {
+  background-color: rgb(37, 37, 37);
+  cursor: pointer;
+}
+
+#minimizeBtn,
+#maximizeBtn,
+#closeBtn {
+  height: 38px;
+  width: 50px;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: none;
+  transition: 0.2s linear;
+}
+
+#minimizeBtn:hover,
+#maximizeBtn:hover {
+  background-color: rgb(37, 37, 37);
+}
+
+#closeBtn:hover {
+  background-color: red;
+}
+
+.titlebar {
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  margin-right: 150px;
+  height: 38px;
+  background-color: black;
+  box-shadow: 0px 0.5px 1px black;
+  -webkit-app-region: drag;
+  z-index: 1;
+}
+
+.company {
+  color: white;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.q-btn {
+  margin-top: 10px;
+}
+
+#printQR {
+  margin-right: 5px;
+}
+
+#addQR {
+  margin-left: 5px;
+}
+
+.settings {
+  margin-bottom: auto;
+  margin-top: 40px;
+  height: 100px;
+}
+
+.whois {
+  margin-top: 30px;
+  width: 600px;
+}
+
+h5 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "encodedevice",
+  "version": "1.0.0",
+  "description": "device",
+  "main": "device.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dch@kwel.ru",
+  "license": "ISC",
+  "dependencies": {
+    "express-ws": "^5.0.2"
+  }
+}
