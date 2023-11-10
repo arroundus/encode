@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
           const modal = window.open();
           modal.document.body.innerHTML = "<div class='qrcodes'></div>";
 
+          let countImg = 0;
+
           response.data.forEach(function (item) {
             const div = modal.document.createElement("div");
             div.setAttribute("style", "margin-bottom: 100vh;");
@@ -55,12 +57,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             QRCode.toDataURL(`${item}`, (err, url) => {
               div.innerHTML = `<img src='${url}' style='height: ${sizeQR}px;width: ${sizeQR}px'>`;
               modal.document.querySelector(".qrcodes").appendChild(div);
+              countImg += 1;
             });
           });
-          setTimeout(() => {
-            modal.print();
-            modal.close();
-          }, 1000);
+
+          if (countImg <= countQR) {
+            setTimeout(() => {
+              modal.print();
+              modal.close();
+            }, 2000);
+          }
         })
         .catch((error) => {
           console.error(error);
