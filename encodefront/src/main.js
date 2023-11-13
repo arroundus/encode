@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             //Вывод полученых кодов на модальное окно
             QRCode.toDataURL(`${item}`, (err, url) => {
-              div.innerHTML = `<img src='${url}' style='height: ${sizeQR}px;width: ${sizeQR}px'>`;
+              div.innerHTML = `<img src='${url}' style='height: ${sizeQR}px;width: ${sizeQR}px; loading: eager'>`;
               modal.document.querySelector(".qrcodes").appendChild(div);
               countImg += 1;
             });
@@ -63,16 +63,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
           if (countImg <= countQR) {
             setTimeout(() => {
-              let images = modal.document.querySelectorAll('img')
-              // console.log(images[images.length - 1].height)
-              if (images[images.length - 1].width > 0 && images[images.length - 1].height > 0) {
-                modal.print();
-                modal.close();
-              } else {
-                modal.close();
-                alert('Не все QR коды загрузились')
-              }
-            }, 2000);
+              modal.print();
+              modal.close();
+            }, countQR * 3);
           }
         })
         .catch((error) => {
