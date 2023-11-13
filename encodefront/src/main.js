@@ -63,8 +63,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
           if (countImg <= countQR) {
             setTimeout(() => {
-              modal.print();
-              modal.close();
+              let images = modal.document.querySelectorAll('img')
+              // console.log(images[images.length - 1].height)
+              if (images[images.length - 1].width > 0 && images[images.length - 1].height > 0) {
+                modal.print();
+                modal.close();
+              } else {
+                modal.close();
+                alert('Не все QR коды загрузились')
+              }
             }, 2000);
           }
         })
