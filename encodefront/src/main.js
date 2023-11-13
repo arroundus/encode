@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             setTimeout(() => {
               modal.print();
               modal.close();
-            }, countQR * 3);
+            }, countQR * 10);
           }
         })
         .catch((error) => {
